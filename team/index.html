@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2024 WATERBOMB</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+    <link rel="stylesheet" href="/team/css/reset.css">
+    <link rel="stylesheet" href="/team/css/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="/team/js/contents.js"></script>
+        
+</head>
+<body>
+<!-- 로딩화면 ,영상  -->
+<div id="loading_container">
+    <section id="loading_intro">
+        <h2 class="hidden">intro</h2>
+        <div class="loading_wrap">
+            <div class="loading wave">WATERBOMB</div>
+            <div class="percent">LOADING ...0%</div>
+        </div>
+    </section>
+    <section id="video_wrap">
+        <h2 class="hidden">video</h2>
+        <video id="test" autoplay muted loop playsinline>
+            <source src="/team/images/waterbomb.mp4" type="video/mp4">
+        </video>
+        <div class="scroll-msg-container">
+            <div class="scroll-msg-inner">
+                <div class="scroll-msg-wheel"></div>
+            </div>
+        </div>
+    </section>
+</div>  
+<!-- 인트로 -->
+<section id="intro_wrap">
+    <h2 class="hidden">festivalWATERBOMB</h2>
+    <div id="intro">
+        <div class="introtxt_wrap">
+            <div class="intro_title">FESTIVAL WATERBOMB</div>
+            <div class="introsubtxt_wrap">
+                <div class="intro_subtitle">IT'S WATERBOMB!</div>
+                <div class="subtxt_wrap">
+                    <div class="subtxt_left">
+                        <div class="intro_txt">
+                            메이드온에서 제작하는 국내 최대 규모의 음악 및 물 테마의 페스티벌로,<br>K-POP, 힙합, EDM 등 다양한 장르의 공연과 물을 사용한 대규모 워터파이팅이<br>결합된 페스티벌입니다.
+                        </div>
+                        <div class="intro_txt">
+                            국내 페스티벌 중 처음으로 1년 내 여러 지역 투어를 시작했으며, 서울 외 다른 지역<br>또한 서울 못지 않은 흥행을 이뤄내고 있습니다. 워터밤은 서울을 비롯한 9개<br>도시에서의 국내 투어와 일본 도쿄, 나고야 및 태국에서 해외 투어를 개최하고 있습니다.
+                        </div>
+                    </div>
+                    <div class="subtxt_right">
+                        <div class="intro_txt">
+                            It is the largest music and water-themed festival in Korea.<br>produced by Made On,
+                            K-POP, hip-hop, EDM, and other genres of<br>performances and water fighting It's a combined festival.<br>First of all of the domestic festival in Korea,<br>Other areas outside Seoul are also making excitement of Seoul.<br>In nine cities, including Seoul, Japan, Japan and Thailand, Tokyo,<br>Nagoya, Nagoya and Thailand.
+                        </div>
+                    </div> 
+                </div>              
+            </div>
+        </div>
+    </div> 
+</section>
+<!-- 워터밤소개 -->
+<section id="whatis">
+    <h2 class="hidden">3S</h2>
+    <!-- 흐르는글자영역 -->
+    <div class="flowtxt"></div>
+    <!-- 흐르는글자영역끝 -->
+    <div class="splashline_wrap">
+        <div class="splashline1"></div>
+        <div class="splashline2"></div>
+    </div>
+    <!-- 시너지영역 -->
+    <div class="synergybox_wrap">
+        <div class="synergybox" id="act1">
+            <img src="/team/images/act1_img.png" alt="act1">
+            <p class="synergybox_title">ESCAPE</p>
+            <div class="marker"></div>
+            <p class="synergybox_title_ko">더운 일상으로부터의 탈출</p>
+            <div class="synergybox_subtxt">시원한 워터 파이팅과 멋진 뮤지션들의 공연을 즐기며<br>도시로부터 탈출하세요.</div>
+            <div class="synergybox_subtxt_en">Find your escape from the summer heat<br>surrounded by blasting water cannons and<br>chilling live performances.</div>
+        </div>
+        <div class="synergybox" id="act2">
+            <img src="/team/images/act2_img.png" alt="act1">
+            <p class="synergybox_title">ENERGY</p>
+            <div class="marker"></div>
+            <p class="synergybox_title_ko">당신의 에너지와 열정</p>
+            <div class="synergybox_subtxt">넘치는 당신의 에너지를 멋지게 표현하여 열정적이고 즐거운<br>플레이어가 되어보세요. 정말 즐거운 하루를 보내고, 친구를<br>만날 수 있습니다.</div>
+            <div class="synergybox_subtxt_en">Explode your passion and energy at our epic water<br>battle ground with your team. Gear up and fire away!</div>
+        </div>
+        <div class="synergybox" id="act3">
+            <img src="/team/images/act3_img.png" alt="act1">
+            <p class="synergybox_title">EXPERIENCE</p>
+            <div class="marker2"></div>
+            <p class="synergybox_title_ko">당신을 기다리는 새로운 경험</p>
+            <div class="synergybox_subtxt">워터밤은 뮤직 페스티벌의 새로운 패러다임을 제시하였습니다.<br>음악, 예능, 물놀이를 결합하여 관객과 아티스트가 함께 공연을<br>즐기며 만들어가는 짜릿하고 특별한 경험을 선사합니다.</div>
+            <div class="synergybox_subtxt_en">Experience a revolutionizing paradigm of music  festival where<br>you get to become a player and a creator of the entire<br>experience: entertainment, performances, and water-battle.</div>
+        </div>
+    </div>
+</section>
+<section id="dday">
+    <h2 class="hidden">d-day</h2>
+    <div class="dday_wrap">
+        <video src="/team/images/fireworks.mp4" autoplay muted loop></video>
+        <div id="bg_blur"></div>
+        <div class="soon_wrap">
+            <p class="soon_title">WE ARE<br> COMMING<br> SOON!</p>
+            <p class="soon_text">WATERBOMB IN SEOUL</p>
+        </div>
+        <div class="date_wrap">
+            <p class="date_title">2025 07.04 ~ 06 (FRI - SUN)</p>
+            <p class="date_text">돌아올 여름을 위해, 티켓을 미리 준비하세요!</p>
+            <p class="date_text_en">For the summer to come back, prepare your tickets in advance!</p>
+            <div id="countdown_wrap">
+                <ul id="countdown">
+                    <li><span id="days"></span>Days</li>
+                    <li><span class="dot">:</span></li>
+                    <li><span id="hours"></span>HOURS</li>
+                    <li><span class="dot">:</span></li>
+                    <li><span id="minutes"></span>MINS</li>
+                    <li><span class="dot">:</span></li>
+                    <li><span id="seconds"></span>SECS</li>
+                </ul>
+            </div>
+            <div class="circle-container">
+                <svg width="700" height="700" class="circle-progress">
+                  <circle cx="350" cy="350" r="325" class="circle-progress-fill"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- 티켓예매 -->
+<section id="tickets">
+    <h2 class="hidden">tickets</h2>
+    <div class="reserve_wrap">
+        <div class="reserv_txt_wrap">
+            <p class="flip">FLIP TO TICKET</p>
+            <div class="flip_arrow"></div>
+        </div> 
+        <div class="tickets_wrap">
+    <!-- 티켓디테일 -->
+        <!-- 티켓1 -->
+        <a href="#" class="ticket" id="vvip">
+            <div class="ticket_inner">
+                <!-- 앞면 -->
+                <div class="ticket_front">
+                    <div class="ticket_front_left">
+                        <img src="/team/images/vvip.png" alt="vvip">
+                    </div>
+                    <div class="ticket_front_right">
+                        <div class="ticket_right_box">
+                            <div class="ticket_title">VVIP<br>ROUNGE</div>
+                            <img src="/team/images/vvip_qr.png" alt="qr">
+                        </div>
+                    </div>
+                </div>
+                <!-- 뒷면 -->
+                <div class="ticket_back">
+                    <div class="ticket_back_left">
+                        <div class="ticket_left_border">
+                            <p class="ticket_back_title">VVIP LOUNGE</p>
+                            <div class="ticketinfo_kr">
+                                편안하게 쉴 수 있는 테이블과 시트, 샴페인과 핑거푸드가<br>갖춰진 워터밤의 프리미엄 에리어!나만의 공간에서<br>럭셔리한 여유로움을 즐겨보세요!
+                            </div>
+                            <div class="ticketinfo_en">
+                                WATERBOMB's premium area is equipped with tables and seats where<br>you can relax comfortably and enjoy champagne and finger foods.<br>Enjoy a luxurious and relaxing experience in your own space!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ticket_back_right">
+                        <div class="ticket_back_right_box"></div>
+                        <div class="ticket_right_txt_wrap">
+                            <div class="ticket_right_txt">WATERBOMB IN ONE ORIGINAL TICKET</div>
+                            <div class="ticket_right_txt">NO.1111</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+         <!-- 티켓2 -->
+         <a href="#" class="ticket" id="waterbomtime">
+            <div class="ticket_inner">
+                <!-- 앞면 -->
+                <div class="ticket_front">
+                    <div class="ticket_front_left">
+                        <img src="/team/images/waterbombtime.png" alt="waterbomtime">
+                    </div>
+                    <div class="ticket_front_right">
+                        <div class="ticket_right_box">
+                            <div class="ticket_title">WATERBOMB<br>TIME</div>
+                            <img src="/team/images/vvip_qr.png" alt="qr">
+                        </div>
+                    </div>
+                </div>
+                <!-- 뒷면 -->
+                <div class="ticket_back">
+                    <div class="ticket_back_left">
+                        <div class="ticket_left_border">
+                            <p class="ticket_back_title">WATERBOMB TIME</p>
+                            <div class="ticketinfo_kr">
+                                터지는 긴장감과 스릴을 동반한 워터밤타임은 잊지 못할<br>즐거움을 제공합니다. 압도적인 스케일의 물폭탄과 강력한<br>워터캐논이 선사할 짜릿함을 온몸으로 느껴보세요.
+                            </div>
+                            <div class="ticketinfo_en">
+                                WATERBOMB Time, accompanied by explosive tension and thrill,<br>offers an unforgettable experience of joy. Feel the excitement brought <br>by overwhelming scale water bombs and powerful water cannons <br>throughout your body.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ticket_back_right">
+                        <div class="ticket_back_right_box"></div>
+                        <div class="ticket_right_txt_wrap">
+                            <div class="ticket_right_txt">WATERBOMB IN ONE ORIGINAL TICKET</div>
+                            <div class="ticket_right_txt">NO.1111</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <!-- 티켓3 -->
+        <a href="#" class="ticket" id="music_performance">
+            <div class="ticket_inner">
+                <!-- 앞면 -->
+                <div class="ticket_front">
+                    <div class="ticket_front_left">
+                        <img src="/team/images/MUSIC_PERFORMANCE.png" alt="music&performance">
+                    </div>
+                    <div class="ticket_front_right">
+                        <div class="ticket_right_box">
+                            <div class="ticket_title">MUSIC &<br>PERFORMANCE</div>
+                            <img src="/team/images/vvip_qr.png" alt="qr">
+                        </div>
+                    </div>
+                </div>
+                <!-- 뒷면 -->
+                <div class="ticket_back">
+                    <div class="ticket_back_left">
+                        <div class="ticket_left_border">
+                            <p class="ticket_back_title">MUSIC & PERFORMANCE</p>
+                            <div class="ticketinfo_kr">
+                                압도적인 비주얼과 화려한 퍼포먼스의 K-POP, 트렌디하고<br>파워풀한 매력의 HIP-HOP 그리고 KOREAN DJ의 폭발적인 <br>댄스 뮤직이 여려분 앞에 펼쳐집니다.
+                            </div>
+                            <div class="ticketinfo_en">
+                                The overwhelming visuals and dazzling K-POP performances, the trendy<br>and powerful charm of HIP-HOP, and the explosive dance music of<br>KOREAN DJ will be presented to you.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ticket_back_right">
+                        <div class="ticket_back_right_box"></div>
+                        <div class="ticket_right_txt_wrap">
+                            <div class="ticket_right_txt">WATERBOMB IN ONE ORIGINAL TICKET</div>
+                            <div class="ticket_right_txt">NO.1111</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <!-- 티켓4 -->
+        <a href="#" class="ticket" id="more_experience">
+            <div class="ticket_inner">
+                <!-- 앞면 -->
+                <div class="ticket_front">
+                    <div class="ticket_front_left">
+                        <img src="/team/images/more_experience.png" alt="more_experience">
+                    </div>
+                    <div class="ticket_front_right">
+                        <div class="ticket_right_box">
+                            <div class="ticket_title">MORE<br>EXPERIENCE</div>
+                            <img src="/team/images/vvip_qr.png" alt="qr">
+                        </div>
+                    </div>
+                </div>
+                <!-- 뒷면 -->
+                <div class="ticket_back">
+                    <div class="ticket_back_left">
+                        <div class="ticket_left_border">
+                            <p class="ticket_back_title">MORE EXPEREIENCE</p>
+                            <div class="ticketinfo_kr">
+                                워터밤의 하루를 기념할 수 있는 화려한 포토존과 액티비티한<br>콘텐츠가 가득한 팝업존! 다양한 맛이 가득한 푸드존 등<br>워터밤이 선사하는 다양한 경험을 통해 특별한 하루를 보내보세요.
+                            </div>
+                            <div class="ticketinfo_en">
+                                A vibrant photo zone to commemorate your day at WATERBOMB! A pop-<br>up zone filled with lively content, The food zone filled with a variety of<br>flavors! Experience a special day through the dynamic offerings of<br>WATERBOMB
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ticket_back_right">
+                        <div class="ticket_back_right_box"></div>
+                        <div class="ticket_right_txt_wrap">
+                            <div class="ticket_right_txt">WATERBOMB IN ONE ORIGINAL TICKET</div>
+                            <div class="ticket_right_txt">NO.1111</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <!-- 티켓5 티켓구매 -->
+        <a href="#" class="ticket" id="buy_ticket">
+            <div class="buy_ticket_inner ticket_inner" >
+                <!-- 앞면 -->
+                <div class="buy_ticket_front">
+                    <div class="ticket_front_left">
+                        <img src="/team/images/buy_ticket.png" alt="buy_ticket">
+                    </div>
+                    <div class="buy_ticket_front_right">
+                        <div class="buy_ticket_right_box">
+                            <div class="buy_ticket_title">BUY TICKET</div>
+                            <img src="/team/images/buy_qr.svg" alt="qr">
+                        </div>
+                    </div>
+                </div>
+                <!-- 뒷면 -->
+                <div class="buy_ticket_back">
+                    <div class="buy_ticket_back_left">
+                        <div class="buy_ticket_left_border"></div>
+                    </div>
+                    <div class="buy_ticket_back_right">
+                        <div class="buy_ticket_back_right_box"></div>
+                        <div class="buy_ticket_right_txt_wrap">
+                            <div class="buy_ticket_right_txt">WATERBOMB IN ONE ORIGINAL TICKET</div>
+                            <div class="buy_ticket_right_txt">NO.1111</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <!-- 티켓6 -->
+        <a href="#" class="ticket" id="water_fighting">
+            <div class="ticket_inner">
+                <!-- 앞면 -->
+                <div class="ticket_front">
+                    <div class="ticket_front_left">
+                        <img src="/team/images/water_fighting.png" alt="water_fighting">
+                    </div>
+                    <div class="ticket_front_right">
+                        <div class="ticket_right_box">
+                            <div class="ticket_title">WATER<br>FIGHTING</div>
+                            <img src="/team/images/vvip_qr.png" alt="qr">
+                        </div>
+                    </div>
+                </div>
+                <!-- 뒷면 -->
+                <div class="ticket_back">
+                    <div class="ticket_back_left">
+                        <div class="ticket_left_border">
+                            <p class="ticket_back_title">WATER FIGHTING</p>
+                            <div class="ticketinfo_kr">
+                                어디서도 볼 수 없는 워터밤만의 다이나믹한<br> 워터파이팅! 강력하고 개성 넘치는 워터건으로<br>팀을 승리로 이끌어 최고의 플레이어가 되어 보세요.
+                            </div>
+                            <div class="ticketinfo_en">
+                                Experience WATERBOMB's dynamic water-fighting like no other.<br>Become the best player with powerful and unique water guns that<br>will lead your team to victory.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ticket_back_right">
+                        <div class="ticket_back_right_box"></div>
+                        <div class="ticket_right_txt_wrap">
+                            <div class="ticket_right_txt">WATERBOMB IN ONE ORIGINAL TICKET</div>
+                            <div class="ticket_right_txt">NO.1111</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <!-- 바코드상자 -->
+    <div class="reservaiton_box">
+        <a href="#" class="reservation_btn_wrap">
+            <div class="reservaiton">RESERVATION</div>
+            <div class="reseration_arrow"><img src='/team/images/reservbtn_arrow.svg' alt="arrow"></div>
+        </a>
+        <div class="reservation_txt">
+            <p id="reservation_title">2025년 티켓 사전 예약, 지금 바로 구매 하세요!</p>
+        </div>
+        <div class="barcode"></div>
+    </div>     
+    </div>
+</section>
+<!-- 라인업 -->
+<section id="lineup_wrap">
+    <h2 class="hidden">lineup</h2>
+    <div class="lineup_bg">
+        <div class="lineup_txt_wrap">
+            <div class="lineup_title">2024 WATERBOMB LINEUP</div>
+            <div class="lineup_txt_left">워터밤의 출연진은 매년 뛰어난 K-POP 아티스트들을 중심으로<br>구성됩니다. 유명 아티스트들이 출연하며, 그들의 무대는 워터밤을<br>더욱 뜨겁고 신나게 만듭니다.</div>
+            <div class="lineup_txt_right">
+                또한  국내 EDM 프로듀서와 DJ들도 함께하며, 전통적인 EDM<br>페스티벌과는 달리 K-POP 아티스트들과 함께 공연을 펼치기도 합니다.<br>이는 워터밤만의 특색을 살려, 관객들에게 새로운 경험을 제공합니다.
+            </div>
+            <div class="lineup_txt_left">
+                여러분이 기다려온 그 순간,<br>뜨거운 여름을 만들어갈 아티스트들을 소개합니다!
+            </div>
+        </div>
+        <div class="artists_wrap">
+            <div class="artist_teamgreen" id="green_1">
+                <div class="artist_teamgreen_name">ZICO</div>
+                <img src="/team/images/zico.png" alt="ZICO">
+            </div>
+            <div class="artist_teamyellow" id="yellow_1">
+                <div class="artist_teamyellow_name">NAYEON</div>
+                <img src="/team/images/nayeon.png" alt="NAYEON">
+            </div>
+
+                    
+            <div class="artist_teamgreen" id="green_2">
+                <div class="artist_teamgreen_name">SIMON DOMINIC</div>
+                <img src="/team/images/teamg_2.png" alt="SIMON_DOMIC">
+            </div>
+            <div class="artist_teamyellow" id="yellow_2">
+                <div class="artist_teamyellow_name">YOOA</div>
+                <img src="/team/images/teamy_2.png" alt="YOOA">
+            </div>
+
+
+            <div class="artist_teamgreen" id="green_3">
+                <div class="artist_teamgreen_name">CHUNG HA</div>
+                <img src="/team/images/teamg_3.png" alt="CHUNG HA">
+            </div>
+            <div class="artist_teamyellow" id="yellow_3">
+                <div class="artist_teamyellow_name">SUNMI</div>
+                <img src="/team/images/teamy_3.png" alt="SUNMI">
+            </div>
+
+
+            <div class="artist_teamgreen" id="green_4">
+                <div class="artist_teamgreen_name">BIBI</div>
+                <img src="/team/images/teamg_4.png" alt="BIBI">
+            </div>
+            <div class="artist_teamyellow" id="yellow_4">
+                <div class="artist_teamyellow_name">KWON EUNBI</div>
+                <img src="/team/images/teamy_4.png" alt="KWON EUNBI">
+            </div>    
+        </div>
+
+        <!-- 스크롤바 -->
+        <div class="lineup_scroll_wrap">
+            <div class="scrollbar_area">
+                <a class="icon"><img src="/team/images/scroll_icon.svg" alt="scrollicon"></a>
+                <a class="scrollbar"></a>
+            </div>   
+        </div>        
+    </div>
+</section>
+<!-- 2024갤러리 -->
+<section id="gallery_2024">
+    <h2 class="hidden">moment2024</h2>
+    <div class="moment_wrap">
+        <div class="moment_title">WATERBOMB IN 2024</div>
+        <div class="picboard_wrap">
+            <a class="pic1">
+                <ul class="dot_wrap">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </a>
+            <a class="pic2">
+                <ul class="dot_wrap">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </a>
+            <a class="pic3">
+                <ul class="dot_wrap">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </a>
+            <a class="pic4">
+                <ul class="dot_wrap">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </a>
+            <a class="pic5">
+                <ul class="dot_wrap">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </a>
+            <a class="pic6">
+                <ul class="dot_wrap">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </a>
+        </div>
+    </div>
+
+</section>
+<!-- 오버뷰 -->
+<section id="overview">
+<h2 id="overview_title">OVERVIEW</h2>
+<div class="overview_wrap">
+    <div class="yearlist_wrap">
+        <ul class="yearlist">
+            <li class="selected"><a>#2023</a></li>
+            <li><a>#2022</a></li>
+            <li><a>#2019</a></li>
+            <li><a>#2018</a></li>
+        </ul>
+    </div>
+    <div class="yearimglist_wrap">
+        <ul class="yearimglist activate"> <!--2023-->
+            <li><img src="/team/images/2023_1.png" alt="2023_1"></li>
+            <li><img src="/team/images/2023_2.png" alt="2023_2"></li>
+            <li><img src="/team/images/2023_3.png" alt="2023_3"></li>
+            <li><img src="/team/images/2023_4.png" alt="2023_4"></li>
+            <li><img src="/team/images/2023_5.png" alt="2023_5"></li>
+            <li><img src="/team/images/2023_6.png" alt="2023_6"></li>
+        </ul>
+        <ul class="yearimglist inactive"> <!--2022-->
+            <li><img src="/team/images/2022_1.png" alt="2023_1"></li>
+            <li><img src="/team/images/2022_2.png" alt="2023_2"></li>
+            <li><img src="/team/images/2022_3.png" alt="2023_3"></li>
+            <li><img src="/team/images/2022_4.png" alt="2023_4"></li>
+            <li><img src="/team/images/2022_5.png" alt="2023_5"></li>
+            <li><img src="/team/images/2022_6.png" alt="2023_6"></li>
+        </ul>
+        <ul class="yearimglist inactive"> <!--2019-->
+            <li><img src="/team/images/2019_1.png" alt="2023_1"></li>
+            <li><img src="/team/images/2019_2.png" alt="2023_2"></li>
+            <li><img src="/team/images/2019_3.png" alt="2023_3"></li>
+            <li><img src="/team/images/2019_4.png" alt="2023_4"></li>
+            <li><img src="/team/images/2019_5.png" alt="2023_5"></li>
+            <li><img src="/team/images/2019_6.png" alt="2023_6"></li>
+        </ul>
+        <ul class="yearimglist inactive"> <!--2018-->
+            <li><img src="/team/images/2018_1.png" alt="2023_1"></li>
+            <li><img src="/team/images/2018_2.png" alt="2023_2"></li>
+            <li><img src="/team/images/2018_3.png" alt="2023_3"></li>
+            <li><img src="/team/images/2018_4.png" alt="2023_4"></li>
+            <li><img src="/team/images/2018_5.png" alt="2023_5"></li>
+            <li><img src="/team/images/2018_6.png" alt="2023_6"></li>
+        </ul>
+        
+    </div>
+    <button id="overview_more">VIEW MORE</button>
+</div>
+</section>
+
+<div id="remote_wrap">
+    <ul id="remote_control">
+        <li>
+            <a href="#;">
+            <span class="menu_icon"></span>
+            </a>
+        </li>
+        <li>
+            <a href="#;">
+            <span class="menu_icon"></span>
+            </a>
+        </li>
+        <li>
+            <a href="#;">
+            <span class="menu_icon"></span>
+            </a>
+        </li>
+        <li>
+            <a href="#;">
+            <span class="menu_icon"></span>
+            </a>
+        </li>
+    </ul>
+</div>
+<!-- 푸터 -->
+<footer>
+    <div class="footericons_wrap">
+        <a href="#"><img src="/team/images/footer_logo.svg" alt="footerlogo"></a>
+        <ul class="shareicons_list">
+            <li><a href="#"><img src="/team/images/footer_insta.svg" alt="footer_insta"></a></li>
+            <li><a href="#"><img src="/team/images/footer_x.svg" alt="footer_x"></a></li>
+            <li><a href="#"><img src="/team/images/footer_tiktok.svg" alt="footer_tiktok"></a></li>
+            <li><a href="#"><img src="/team/images/footer_youtube.svg" alt="footer_youtube"></a></li>
+            <li><a href="#"><img src="/team/images/footer_facebook.svg" alt="footer_facebook"></a></li>
+        </ul>
+    </div>
+    <div class="footer_txt_wrap">
+        <p class="footer_txt">© 2015-2025 WaterBomb. All Rights Reserved. WATERBOMB FESTIVAL KOREA</p>
+        <p class="footer_txt">(주)메이드온 MADE ONE Corp. 대표 한익수 사업자등록번호 643-86-02551</p>
+        <p class="footer_txt">주소 서울특별시 마포구 잔다리로3길 17(서교동) 유선 번호 0507-1384-3071</p>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,1799 @@
+/*기본설정시작*/
+::-webkit-scrollbar {
+    width: 10px;  /* 세로 스크롤바는 유지 */
+    height: 0;  /* 가로 스크롤바 숨김 */
+}
+/* 스크롤바 트랙 스타일링 (선택사항) */
+::-webkit-scrollbar-track {
+    background:#000;
+}
+
+/* 스크롤바 썸(이동하는 부분) 스타일링 (선택사항) */
+::-webkit-scrollbar-thumb {
+    background: #00C74B;
+    border-radius: 5px;
+}
+
+body,html{
+    width:100%;
+    height:100%;
+    background-color:#000;
+    margin:0;
+    padding:0;
+}
+
+a{
+    color:black;
+    text-decoration:none;
+}
+.hidden{
+    width:1px;
+    height:1px;
+    font-size:0px;
+    line-height:0px;
+    position:absolute;
+}
+ul.skipmenu_list li a:focus{
+    width:100%;
+    height:30px;
+    font-size:14px;
+    line-height:30px;
+    z-index:9999;
+    background:black;
+    color:white;
+    text-align:center;
+    top:0px;
+}
+/* 기본설정끝 */
+/* 로딩화면 */
+
+.scroll_guide {
+    position: absolute;
+    top:80%;
+    left:50%;
+    transform: translateX(-50%);
+    color: #000;
+    font: 700 40px 'pretendard';
+    opacity: 0; /* 초기에는 투명 */
+    transition: opacity 0.5s ease; /* 페이드인 효과 */
+    z-index: 2;
+}
+.scroll_guide.visible {
+    opacity: 1;
+    animation: bounce 1.5s infinite;
+}
+#loading_container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+    overflow: hidden;
+}
+.scroll_guide {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 16px;
+    animation: bounce 1.5s infinite;
+    z-index: 2;
+}
+section#loading_intro{
+    width:100%;
+    height:100vh;
+    background:black;
+    display:flex;
+    justify-content:center;
+    position:absolute;
+    top:0px;
+    left:0px;
+    z-index:9999;
+}
+.loading_wrap{
+    height:100%;
+    max-width:1920px;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+}
+.loading{
+    font-family: "pretendard";
+    font-weight:900;
+    font-size: 200px;
+    text-align: center;
+    height:147px;
+    line-height:144px;
+    display: block;
+    margin-bottom:263px;
+}
+
+.percent{
+    font: 600 16px 'Pretendard';
+    color: #00C74B;
+    text-align: center;
+}
+/* 영상 */
+section#video_wrap{
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:black;
+    box-sizing:border-box;
+    overflow:hidden;
+    z-index:1;
+}
+section#video_wrap video {
+    width: 100%;
+    height: 100%;
+    object-fit:fill;
+}
+.scroll-msg-container {
+    position:absolute;
+    bottom:5%;
+    left: 50%;
+    width: 60px;
+    height: 108px;
+    margin-top: -54px;
+    margin-left: -30px;
+    scale:.3;
+  }
+  
+  .scroll-msg-inner {
+    width: 52px;
+    height: 100px;
+    position: relative;
+    border-radius: 34px;
+    border: 8px solid #ffffff;
+  }
+  
+  .scroll-msg-wheel {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    margin-left: -6px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    -webkit-animation: mouse-scroll 1s infinite;
+    -moz-animation: mouse-scroll 1s infinite;
+    -o-animation: mouse-scroll 1s infinite;
+    animation: mouse-scroll 1s infinite;
+  }
+/* 인트로 */
+section#intro_wrap{
+    position:relative;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:956px;
+    background:black;
+    display:flex;
+    justify-content:center;
+    overflow:hidden;
+    z-index: 1;
+    box-sizing:border-box;
+}
+#intro{
+    width:100%;
+    height:100%;
+    background:url('/team/images/intro_bg.png')no-repeat center;
+    background-size:cover;
+    display:flex;
+    padding-left:60px;
+    align-items:flex-end;
+}
+.introtxt_wrap{
+    display:flex;
+    width:auto;
+    height:auto;
+    gap:100px;
+    margin-bottom:44px;
+}
+.intro_title{
+    font:700 60px 'Pretendard';
+    color:#fff;
+    position:absolute;
+    left:60px;
+    bottom:140px;
+}
+.introsubtxt_wrap{
+    position:absolute;
+    bottom:45px;
+    width:auto;
+    height:auto;
+    display:flex;
+    flex-direction:column;
+}
+.intro_subtitle{
+    position:absolute;
+    top:0px;
+    left:769px;
+    font:600 14px 'Pretendard';
+    color:#fff;
+    margin-bottom:12px;
+}
+.subtxt_wrap{
+    position:relative;
+    top:12px;
+    left:769px;
+    width:auto;
+    height:auto;
+    display:flex;
+    gap:93px;
+}
+.subtxt_left{
+    position:relative;
+    top:12px;
+    width:auto;
+    height:auto;
+}
+.subtxt_right{
+    width:auto;
+    height:auto;
+}
+.intro_txt{
+    font:600 14px 'Pretendard';
+    color:#fff;
+    line-height:21px;
+    margin-bottom:12px;
+}
+/* 인트로끝 */
+/* 워터밤소개 */
+section#whatis{
+    width:100%;
+    height:956px;
+    background:black;
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+}
+/* 흐르는글자영역 */
+.flowtxt{
+    position:absolute;
+    top:0px;
+    width:100%;
+    height:80px;
+    background:url('/team/images/flowtxt.svg') repeat;
+    animation:flow-animation 10s linear forwards infinite;
+    animation-direction:reverse;
+    }
+/* 백그라운드 교차 띠*/
+.splashline_wrap{
+    position:absolute;
+    top:239px;
+    width:100%;
+    height:636px;
+    background:none;
+    display:flex;
+    justify-content:center;
+}
+.splashline1{
+    position:absolute;
+    top:258px;
+    width:4000px;
+    height:108px;
+    background:url('/team/images/splash_line.svg')repeat-x;
+    transform:rotate(15deg);
+    animation:splash-animation 50s linear infinite reverse;
+}
+.splashline2{
+    position:absolute;
+    top:258px;
+    width:4000px;
+    height:108px;
+    background:url('/team/images/splash_line.svg')repeat-x;
+    background-size:cover;
+    transform:rotate(-15deg);
+    animation:splash-animation 50s linear infinite reverse;
+}
+/* 시너지영역 */
+.synergybox_wrap{
+    position:absolute;
+    margin-left:50%;
+    left:-960px;
+    top:0px;
+    height:100%;
+    width:100%;
+    max-width:1920px;
+    height:636px;
+    top:239px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:30px;
+}
+.synergybox{
+    position:relative;
+    background:none;
+    width:501px;
+    height:560px;
+    background:black;
+    display:flex;
+    flex-direction:column;
+    box-sizing:border-box;
+    padding-bottom:39px;
+}
+.synergybox>img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    margin-bottom:20px;
+}
+p.synergybox_title{
+    font:700 28px 'Pretendard';
+    color:#fff;
+    margin:0px 0px 8px 30px;
+    z-index: 10;
+}
+.marker,
+.marker2{
+    width:0px;
+    height:14px;
+    background:#00C74B;
+    position:absolute;
+    left:24px;
+    bottom:203px;
+    transition:all 0.5s ease-in-out;
+    opacity:0;
+}
+.marker.active{
+    width:117px;
+    opacity:1;
+}
+
+.marker.inactive, .marker2.inactive {
+    width: 0;
+    opacity: 0;
+    transition: all 0.5s ease-in-out; /* 줄어들 때도 같은 시간 적용 */
+}
+
+.marker2.active {
+    width: 180px;
+    opacity: 1;
+}
+p.synergybox_title_ko{
+    font:600 20px 'Pretendard';
+    color:#fff;
+    margin:0px 0px 8px 30px;
+}
+.synergybox_subtxt{
+    font:600 14px 'Pretendard';
+    line-height:21px;
+    color:#fff;
+    margin:0px 0px 8px 30px;
+}
+.synergybox_subtxt{
+    font:600 14px 'Pretendard';
+    line-height:21px;
+    color:#fff;
+    margin:0px 0px 8px 30px;
+}
+.synergybox_subtxt_en{
+    font:600 14px 'Pretendard';
+    line-height:21px;
+    color:#fff;
+    margin-left:30px;
+}
+/* 각 상자 보더색상과 기울기 */
+#act1{
+    border:2px solid #00C74B;
+    transform:rotate(15deg);
+}
+#act2{
+    border:2px solid #00C74B;
+    z-index:50;
+    transform:rotate(-15deg);
+}
+#act3{
+    border:2px solid #00C74B;
+    transform:rotate(15deg);
+    z-index:51;
+}
+.footer_txt_wrap{
+    width:auto;
+    height:auto;
+    display:flex;
+    flex-direction:column;
+}
+p.footer_txt{
+    font:500 14px 'Pretendard';
+    line-height:21px;
+    text-align:center;
+    color:#fff;
+}
+
+/* 남은기간 타이머 */
+section#dday {
+    width: 100%;
+    height: 963px;
+    position: relative;
+    left: 0px;
+    top: 0px;
+}
+
+div.dday_wrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+div.soon_wrap {
+    width: 40%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 3;
+}
+
+div.soon_wrap::after {
+    content:"";
+    display: block;
+    width: 1px;
+    height: 677px;
+    background: white;
+    position: absolute;
+    right: 0px;
+    top: 139px;
+    z-index: 3;
+}
+
+p.soon_title {
+    font: bold 60px/100px 'pretendard';
+    color: white;
+    text-shadow: 4px 4px 4px rgba(0,0,0,0.6);
+}
+
+p.soon_text {
+    font: 500 24px 'pretendard';
+    margin-top: 150px;
+    color: white;
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.6);
+}
+
+div.dday_wrap>video {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+    object-fit: fill;
+    
+}
+
+div#bg_blur {
+    width: 100%;
+    height: 100%;
+    background: black;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 2;
+    /* opacity: 0.5; */
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(255,255,255,0.6) 10%,rgba(255,255,255,0.4) 50%,rgba(255,255,255,0.6) 90%,rgba(0,0,0,1) 100%);
+}
+
+div.date_wrap {
+    width: 60%;
+    height: 100%;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url('/team/images/clock.png')no-repeat center center;
+}
+
+p.date_title {
+    font: bold 50px 'pretendard';
+    color: white;
+    margin-bottom: 68px;
+    position: relative;
+    z-index: 1;
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.6);
+}
+
+p.date_text {
+    font: normal 32px 'pretendard';
+    color: white;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.6);
+}
+
+p.date_text_en {
+    font: normal 24px 'pretendard';
+    color: white;
+    position: relative;
+    z-index: 1;
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.6);
+}
+
+div#countdown_wrap {
+    width: 800px;
+    height: 160px;
+    margin-top: 104px;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+}
+
+    
+ul#countdown {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+ul#countdown>li {
+    display: inline-block;
+    font: 500 22px 'pretendard';
+    list-style-type: none;
+    padding: 1em;
+    text-transform: uppercase;
+    color: #C1C1C1;
+    text-align: center;
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.6);
+}
+
+ul#countdown>li>span {
+    display: block;
+    font: 500 60px 'pretendard';
+    color: white;
+    margin-bottom: 55px;
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.6);
+}
+
+ul#countdown>li>span.dot {
+    font: normal 55px 'pretendard';
+    color: #C1C1C1;
+}
+
+.circle-container {
+    width: 700px;
+    height: 700px;
+    position: absolute;
+    margin: 0 auto;
+}
+
+.circle-progress {
+    transform: rotate(-90deg); /* 초기 시작점을 위쪽으로 */
+}
+
+.circle-progress-fill {
+    fill: none;
+    stroke-width: 40;
+    opacity: 0.3;
+}
+
+
+.circle-progress-fill {
+    stroke: #00C74B; /* 진행 상태 색 */
+    stroke-dasharray: 2042px;
+    stroke-dashoffset: 2042px; /* 처음에는 진행하지 않음 */
+}
+
+    /* 남은기간 타이머 끝 */
+
+/* 티켓예매 */
+section#tickets{
+    position:relative;
+    width:100%;
+    height:963px;
+    background:black;
+    box-sizing:border-box;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.reserve_wrap{
+    position:relative;
+    width:100%;
+    height:100%;
+    max-width:1920px;
+    width:100%;
+    background:url('/team/images/ticket_sec_bg.svg') no-repeat center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    box-sizing:border-box;
+}
+.reserv_txt_wrap{
+    position:relative;
+    width:200px;
+    left:100px;
+    height:auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    animation: bounce 1.5s infinite;
+    box-sizing:border-box;
+}
+p.flip{
+    font:900 16px 'Pretendard';
+    color:black;
+    position:relative;
+    text-shadow:-2px -2px 0 #FFDE00,0 -2px 0 #FFDE00,2px -2px 0 #FFDE00,2px 0 0 #FFDE00,2px 2px 0 #FFDE00,0 2px 0 #FFDE00,-2px 2px 0 #FFDE00,-2px 0 0 #FFDE00;
+    margin-top:77px;
+    margin-bottom:7px;
+}
+.flip_arrow{
+    width:24px;
+    height:24px;
+    background:url('/team/images/flipticket_arrow.svg') no-repeat center;
+}
+.tickets_wrap{
+    position:relative;
+    width:1590px;
+    height:611px;
+    background:none;
+    margin-bottom:50px;
+}
+a.ticket{
+    position: relative;
+    width:490px;
+    height:200px;
+    background:none;
+    background-size:cover;
+    display:block;
+    display:flex;
+}
+.ticket_inner{
+    position:relative;
+    width:100%;
+    height:100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+.ticket_front,
+.ticket_back{
+    position:absolute;
+    width:100%;
+    height:100%;
+    backface-visibility:hidden; /*뒷면 숨김*/
+}
+/* 티켓앞면 */
+.ticket_front {
+    transform:rotateY(0deg); /*앞면 보임*/
+    display:flex;
+}
+.ticket_front_left{
+    width:356px;
+    height:200px;
+    background:black;
+    border-radius:8px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.ticket_front_right{
+    width:135px;
+    height:200px;
+    background:black;
+    border-radius:8px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.ticket_right_box{
+    width:119px;
+    height:180px;
+    border:1px solid #00C74B;
+    border-radius:8px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+.ticket_title{
+    width:100%;
+    height: 50px;
+    border-bottom:1px solid #00C74B;
+    font:700 12px/18px 'Pretendard';
+    color:black;
+    text-shadow:-1px -1px 0 #00C74B,0 -1px 0 #00C74B,1px -1px 0 #00C74B,1px 0 0 #00C74B,1px 1px 0 #00C74B,0 1px 0 #00C74B,-1px 1px 0 #00C74B,-1px 0 0 #00C74B;
+    text-align:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:23px;
+}
+/* 티켓뒷면 */
+.ticket_back {
+    transform:rotateY(180deg); /*뒷면 숨김*/
+    display:flex;
+}
+.ticket_back_left{
+    position:relative;
+    width:356px;
+    height:200px;
+    background:black;
+    border-radius:16px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.ticket_back_left::after{
+    content:'';
+    position:absolute;
+    right:0px;
+    top:16px;
+    height:calc(100% - 32px);
+    border-right:2px dashed #00C74B;
+}
+.ticket_left_border{
+    width:328px;
+    height:176px;
+    background:black;
+    border:1px solid #00C74B;
+    border-radius:8px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    box-sizing:border-box;
+}
+.ticket_back_title{
+    font:700 20px 'Pretendard';
+    color:#00C74B;
+    margin-bottom:8px;
+}
+.ticketinfo_kr{
+    font:500 12px/18px 'Pretendard';
+    color:#00C74B;
+    text-align:center;
+    margin-bottom:8px;
+}
+.ticketinfo_en{
+    font:500 8px/12px 'Pretendard';
+    color:#00C74B;
+    text-align:center;
+}
+.ticket_back_right{
+    width:135px;
+    position:relative;
+    height:200px;
+    background:black;
+    border-radius:16px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    box-sizing:border-box;
+    overflow:visible;
+}
+.ticket_back_right_box{
+    position:absolute;
+    width:107px;
+    height:180px;
+    background:url('/team/images/ticket_logo.svg') no-repeat center;
+    border:1px solid #00C74B;
+    border-radius:8px;
+    
+    display:flex;
+    flex-direction:column;
+}
+.ticket_right_txt_wrap{
+    position:absolute;
+    left:130px;
+    top:18px;
+    width:164px;
+    height:5px;
+    display:flex;
+    justify-content:space-between;
+    box-sizing:border-box;
+    transform:rotate(90deg);
+    transform-origin:left top;
+}
+.ticket_right_txt{
+    font:700 5px 'Pretendard';
+    color:#00C74B;
+}
+/* 티켓구매 스타일 */
+.buy_ticket_inner{
+    position:relative;
+    width:100%;
+    height:100%;
+}
+.buy_ticket_front,
+.buy_ticket_back{
+    position:absolute;
+    width:100%;
+    height:100%;
+    backface-visibility:hidden; /*뒷면 숨김*/
+}
+/* 티켓앞면 */
+.buy_ticket_front {
+    transform:rotateY(0deg); /*앞면 보임*/
+    display:flex;
+}
+.buy_ticket_front_left{
+    width:356px;
+    height:200px;
+    background:black;
+    border-radius:8px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.buy_ticket_front_right{
+    width:135px;
+    height:200px;
+    background:black;
+    border-radius:8px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.buy_ticket_right_box{
+    width:119px;
+    height:180px;
+    border:1px solid #fff;
+    border-radius:8px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+.buy_ticket_title{
+    width:100%;
+    height:50px;
+    border-bottom:1px solid #fff;
+    font:700 14px/18px 'Pretendard';
+    color:#fff;
+    text-align:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:23px;
+}
+/* 티켓뒷면 */
+.buy_ticket_back {
+    transform:rotateY(180deg); /*뒷면 숨김*/
+    display:flex;
+}
+.buy_ticket_back_left{
+    position:relative;
+    width:356px;
+    height:200px;
+    background:black;
+    border-radius:16px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.buy_ticket_back_left::after{
+    content:'';
+    position:absolute;
+    right:0px;
+    top:16px;
+    height:calc(100% - 32px);
+    border-right:2px dashed #fff;
+}
+.buy_ticket_left_border{
+    width:328px;
+    height:176px;
+    background:url('/team/images/buy_ticket_waterbomb.svg') center no-repeat;
+    border:1px solid #fff;
+    border-radius:8px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    box-sizing:border-box;
+}
+.buy_ticket_back_right{
+    width:135px;
+    position:relative;
+    height:200px;
+    background:black;
+    border-radius:16px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    box-sizing:border-box;
+    overflow:visible;
+}
+.buy_ticket_back_right_box{
+    position:absolute;
+    width:107px;
+    height:180px;
+    background:url('/team/images/buy_ticket_back_logo.svg') no-repeat center;
+    border:1px solid #fff;
+    border-radius:8px;
+    display:flex;
+    flex-direction:column;
+}
+.buy_ticket_right_txt_wrap{
+    position:absolute;
+    left:130px;
+    top:18px;
+    width:164px;
+    height:5px;
+    display:flex;
+    justify-content:space-between;
+    box-sizing:border-box;
+    transform:rotate(90deg);
+    transform-origin:left top;
+}
+.buy_ticket_right_txt{
+    font:700 5px 'Pretendard';
+    color:#fff;
+}
+/* 각 티켓 위치 */
+#vvip{
+    position:absolute;
+    left:0px;
+    top:0px;
+    transform:rotate(15deg);
+    z-index:10;
+}
+#waterbomtime{
+    position:absolute;
+    left:542px;
+    top:18px;
+    transform:rotate(-15deg);
+    z-index:9;
+}
+#music_performance{
+    position:absolute;
+    left:1067px;
+    top:27px;
+    transform:rotate(15deg);
+}
+#more_experience{
+    position:absolute;
+    left:35px;
+    top:281px;
+    transform:rotate(-15deg);
+}
+#buy_ticket{
+    position:absolute;
+    left:561px;
+    top:234px;
+    transform:rotate(15deg);
+}
+#water_fighting{
+    position:absolute;
+    left:1062px;
+    top:274px;
+    transform:rotate(-15deg);
+}
+/* 바코드상자 */
+.reservaiton_box{
+    height:100%;
+    max-width:1520px;
+    height:103px;
+    background:black;
+    border:2px solid #00C74B;
+    border-radius:10px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-sizing:border-box;
+    padding-left:13px;
+    padding-right:9px;
+}
+a.reservation_btn_wrap{
+    width:414px;
+    height:76px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-sizing:border-box;
+    gap:13px;
+}
+.reservaiton{
+    width:330px;
+    height:100%;
+    background:black;
+    font:700 40px 'Pretendard';
+    color:#fff;
+    text-shadow:
+      0 0 4px #00C74B,
+      0 0 4px #00C74B,
+      0 0 4px #00C74B,
+      0 0 4px #00C74B,
+      0 0 4px #00C74B,
+      0 0 4px #00C74B,
+      0 0 4px #00C74B,
+      0 0 4px #00C74B;
+    border:2px solid #00C74B;
+    border-radius:10px;
+    text-align:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.reseration_arrow{
+    width:71px;
+    height:100%;
+    border:2px solid #00C74B;
+    border-radius:10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.reservation_txt{
+    font:700 30px 'Pretendard';
+    color:#fff;
+}
+#reservation_title{
+    margin-left: 104px;
+    margin-right: 104px;
+    font:700 26px 'Pretendard';
+    color:#fff;
+}
+.barcode{
+    width:310px;
+    height:75px;
+    background:url('/team/images/barcode.svg') no-repeat center;
+    background-size:cover;
+}
+/* 라인업 */
+section#lineup_wrap{
+    position:relative;
+    width:100%;
+    height:1692px;
+    background:black;
+    display:flex;
+    justify-content:center;
+    box-sizing:border-box;
+}
+.lineup_bg{
+    padding-top:120px;
+    position:relative;
+    width:100%;
+    max-width:1920px;
+    height:1692px;
+    background:url('/team/images/lineup_bg.png')no-repeat center;
+    background-size:cover;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    box-sizing:border-box;
+}
+.lineup_txt_wrap{
+    position:relative;
+    height:577px;
+    width:100%;
+    max-width:1720px;
+    height:517px;
+    background:none;
+    box-sizing:border-box;
+    display:flex;
+    flex-direction:column;
+    gap:40px;
+    margin-bottom:71px;
+}
+.lineup_title{
+    width:100%;
+    height:36px;
+    font:700 30px 'Pretendard';
+    color:#fff;
+    text-align:right;
+}
+.lineup_txt_left{
+    width:100%;
+    height:auto;
+    font:800 30px 'Pretendard';
+    line-height:45px;
+    color:#fff;
+    text-align:left;
+}
+.lineup_txt_right{
+    width:100%;
+    height:auto;
+    font:800 30px 'Pretendard';
+    line-height:45px;
+    color:#fff;
+    text-align:right;
+}
+.artists_wrap{
+    position:relative;
+    width:1720px;
+    height:690px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-sizing:border-box;
+    margin-bottom:96px;
+    perspective: 1000px;
+    overflow:hidden;
+}
+
+/* 초록팀 */
+.artist_teamgreen{
+    position:relative;
+    left:0px;
+    transform-origin: left center;
+    width:784px;
+    height:100%;
+    background:#00C74B;
+    border-radius:10px;
+    border:8px solid #00C74B;
+    box-sizing:border-box;
+    overflow:hidden;
+    
+}
+.artist_teamgreen_name{
+    position:absolute;
+    width:334px;
+    height:107px;
+    background:#00C74B;
+    z-index:13;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-sizing:border-box;
+    font:800 36px 'Pretendard';
+    color:#fff;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, .25);
+    border-radius:0px 0px 10px 0px;
+}
+.artist_teamgreen>img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    object-fit: cover;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+
+
+/* 아티스트별 상자스타일 */
+#green_1{
+    position:absolute;
+    z-index:10;
+}
+#green_2{
+    position:absolute;
+    z-index:8;
+}
+#green_3{
+    position:absolute;
+    z-index:6;
+}
+#green_4{
+    position:absolute;
+    z-index:4;
+}
+
+/* 노랑팀 */
+.artist_teamyellow{
+    position:relative;
+    right:0px;
+    transform-origin: right center;
+    width:784px;
+    height:100%;
+    background:#FFDE00;
+    border-radius:10px;
+    border:8px solid #FFDE00;
+    box-sizing:border-box;
+    overflow:hidden;
+}
+.artist_teamyellow_name{
+    position:absolute;
+    right:0px;
+    width:334px;
+    height:107px;
+    background:#FFDE00;
+    z-index:13;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-sizing:border-box;
+    font:800 36px 'Pretendard';
+    color:#fff;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, .25);
+    border-radius:0px 0px 0px 10px;
+}
+.artist_teamyellow>img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    object-fit: cover;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+
+/* 아티스트별 상자스타일 */
+#yellow_1{
+    position:absolute;
+    z-index:10;
+}
+#yellow_2{
+    position:absolute;
+    z-index:7;
+}
+#yellow_3{
+    position:absolute;
+    z-index:5;
+}
+#yellow_4{
+    position:absolute;
+    z-index:3;
+}
+
+
+
+
+
+
+/* 스크롤바 */
+.lineup_scroll_wrap{
+    position:relative;
+    width:1527px;
+    height:30px;
+    display:flex;
+    align-items:center;
+}
+.scrollbar_area{
+    position:relative;
+    width:100%;
+    height:30px;
+    display:flex;
+    align-items:center;
+    cursor:pointer;
+}
+.lineup_scroll_wrap::after{
+    position:absolute;
+    content:'';
+    display:block;
+    width:100%;
+    height:1px;
+    background:#fff;
+    top:15px;
+}
+a.icon{
+    position: relative;
+    z-index: 3;
+    transition: transform 0.3s ease;
+    display:block;
+    width:22px;
+    height:24px;
+    cursor:pointer;
+}
+a.icon:active {
+    cursor: grabbing;
+}
+.scrollbar {
+    position: relative;
+    width: 100%;
+    height: 1px;
+    background: #fff;
+    cursor: pointer;
+}
+/* 2024갤러리 */
+section#gallery_2024{
+    position:relative;
+    width:100%;
+    height:2122px;
+    background:black;
+    display:flex;
+    justify-content:center;
+    box-sizing:border-box;
+}
+.moment_wrap{
+    position:relative;
+    width:100%;
+    max-width:1920px;
+    height:100%;
+    background:url('/team/images/gallery_bg.png') center no-repeat;
+    box-sizing:border-box;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+.moment_title{
+    position:absolute;
+    top:120px;
+    left:60px;
+    font:700 48px 'Pretendard';
+    color:#fff;
+    margin-bottom:179px;
+}
+.picboard_wrap{
+    position:relative;
+    width:1364px;
+    height:1623px;
+    background:none;
+    box-sizing:border-box;
+}
+.picboard_wrap a {
+    display: block;
+    opacity: 0;
+    transform: translateY(200px);  
+    transition: 0.5s ease-out;
+}
+a.pic1{
+    position:absolute;
+    top:0px;
+    left:0px;
+    display:block;
+    width:368px;
+    height:240px;
+    border-radius:8px;
+    border:6px solid #00C74B;
+    box-sizing:border-box;
+    background:url('/team/images/pic1.png') no-repeat bottom;
+    background-color:#00C74B;
+    z-index:10;
+}
+a.pic2{
+    position:absolute;
+    top:10px;
+    left:315px;
+    display:block;
+    width:400px;
+    height:500px;
+    border-radius:8px;
+    border:6px solid #00C74B;
+    box-sizing:border-box;
+    background:url('/team/images/pic2.png') no-repeat bottom;
+    background-color:#00C74B;
+}
+a.pic3{
+    position:absolute;
+    top:10px;
+    right:109px;
+    display:block;
+    width:500px;
+    height:350px;
+    border-radius:8px;
+    border:6px solid #00C74B;
+    box-sizing:border-box;
+    background:url('/team/images/pic3.png') no-repeat bottom;
+    background-color:#00C74B;
+}
+a.pic4{
+    position:absolute;
+    top:550px;
+    left:24px;
+    display:block;
+    width:500px;
+    height:350px;
+    border-radius:8px;
+    border:6px solid #00C74B;
+    box-sizing:border-box;
+    background:url('/team/images/pic4.png') no-repeat bottom;
+    background-color:#00C74B;
+}
+a.pic5{
+    position:absolute;
+    top:550px;
+    right:0px;
+    display:block;
+    width:800px;
+    height:600px;
+    border-radius:8px;
+    border:6px solid #00C74B;
+    box-sizing:border-box;
+    background:url('/team/images/pic5.png') no-repeat bottom;
+    background-color:#00C74B;
+}
+a.pic6{
+    position:absolute;
+    bottom:0px;
+    right:184px;
+    display:block;
+    width:850px;
+    height:400px;
+    border-radius:8px;
+    border:6px solid #00C74B;
+    box-sizing:border-box;
+    background:url('/team/images/pic6.png') no-repeat bottom;
+    background-color:#00C74B;
+}
+ul.dot_wrap{
+    width:38px;
+    height:10px;
+    position:absolute;
+    left:16px;
+    top:16px;
+    display:flex;
+    justify-content:space-between;
+}
+ul.dot_wrap>li{
+    width:10px;
+    height:10px;
+    background:#fff;
+    border-radius:50%;
+}
+/* 오버뷰 */
+section#overview{
+    width:100%;
+    height:963px;
+    background:black;
+    box-sizing:border-box;
+}
+
+h2#overview_title {
+    font: bold 50px 'pretendard';
+    color: white;
+    text-align: center;
+    
+}
+.overview_wrap{
+    width:100%;
+    max-width:1920px;
+    height:100%;
+    background:url('/team/images/overview_bg.svg') no-repeat center;
+    background-size:cover;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+.yearlist_wrap{
+    width:741px;
+    height:52px;
+    box-sizing:border-box;
+    margin-bottom:76px;
+}
+ul.yearlist{
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:space-between;
+}
+.yearlist>li{
+    width:98px;
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius:26px;
+}
+.yearlist>li>a{
+    font:600 20px 'Pretendard';
+    text-align:center;
+    color:#fff;
+}
+
+.yearlist>li.selected{
+    width:98px;
+    height:100%;
+    background: #00C74B;
+    border-radius:26px;
+}
+
+.yearimglist_wrap{
+    width:1574px;
+    height:676px;
+    display:flex;
+    justify-content:center;
+    overflow:hidden;
+    position:relative;
+}
+
+ul.yearimglist{
+    position:absolute;
+    width:100%;
+    height:100%;
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    grid-template-rows:repeat(2, 1fr);
+    box-sizing:border-box;
+    gap:20px;
+    transition: opacity 0.3s ease, visibility 0.3s ease; 
+}
+
+ul.yearimglist>li{
+    width: 100%;
+    height: 100%;
+    position:relative;
+    overflow: hidden;
+}
+
+ul.yearimglist>li>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display:block;
+    position: absolute;
+    top:0px;
+    left:0px;
+    transition:transform 0.3s ease-out;
+}
+ul.yearimglist>li>img:hover{
+    transform: scale(1.3);
+}
+
+.yearimglist.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.yearimglist.inactive {
+    opacity: 0;
+    visibility: hidden;
+}
+
+button#overview_more {
+    width: 200px;
+    height: 50px;
+    margin-top: 40px;
+    border-radius: 16px;
+    border: 1px solid #00C74B;
+    background: none;
+    color: white;
+    font: normal 16px 'pretendard';
+    cursor: pointer;
+    position: relative;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    z-index: 1;
+}
+
+button#overview_more::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #00c74b;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    transition: 0.5s ease-out;
+    z-index: -1;
+}
+
+button#overview_more:hover::after {
+    left: 0;
+}
+
+
+
+div#remote_wrap{
+    width:52px;
+    height:52px;
+    position:fixed;
+    display: flex;
+    flex-direction: column-reverse;
+    right:8px;
+    bottom:26px;
+    overflow: hidden;
+    border-radius: 16px;
+    z-index: 4;
+}
+ul#remote_control{
+    width:52px;
+    height:216px;   
+    background:#08E73B;
+    border-radius: 16px;
+    display:flex;
+    flex-direction: column;
+    justify-content:space-between;
+
+} 
+ul#remote_control li {
+    width: 100%;
+    height:52px;
+    border-bottom: solid 2px #51FF79;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition:0.5s ease-in-out;
+}
+
+ul#remote_control li:last-child{
+    border-bottom:none;
+}
+span.menu_icon{
+    width:22px;
+    height:22px;
+    display: block;
+}
+ul#remote_control li:nth-child(1) span.menu_icon{
+    background: url('/team/images/Q&A_icon.png')no-repeat center;
+    background-size: cover;
+}
+ul#remote_control li:nth-child(2) span.menu_icon{
+    background: url('/team/images/gallery_icon.png')no-repeat center;
+    background-size: cover;
+}
+ul#remote_control li:nth-child(3) span.menu_icon{
+    width:26px;
+    height:20px;
+    background: url('/team/images/ticket_icon.png')no-repeat center;
+    background-size: cover;
+}
+ul#remote_control li:nth-child(4) span.menu_icon{
+    background: url('/team/images/menu_icon.png')no-repeat center;
+    background-size: cover;
+}
+
+
+/* 푸터 */
+footer{
+    position:relative;
+    width:100%;
+    height:171px;
+    box-sizing:border-box;
+    background:#00C74B;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    margin-top: 120px;
+}
+.footericons_wrap{
+    width:502px;
+    height:40px;
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    margin-bottom:8px;
+}
+ul.shareicons_list{
+    width:164px;
+    height:24px;
+    display:flex;
+    justify-content:space-between;
+}
+
+
+
+
+
+/* 흐르는글자 애니 */
+@keyframes flow-animation{
+    0%{
+        background-position-x:0px;
+    }
+    100%{
+        background-position-x:637px;
+    }
+}
+/* 교차하는띠 애니 */
+@keyframes splash-animation {
+    0% {
+        background-position-x: 0px;
+    }
+    100% {
+        background-position-x: -4000px;
+    }
+}
+
+
+
+
+/* 파도가 좌우로 움직이는 애니메이션 */
+@keyframes wave-animation {
+    0% {
+      background-position: 0 bottom;
+    }
+    100% {
+      background-position: 300px bottom;
+    }
+  }
+/* 파도가 아래에서 위로 차오르는 애니메이션 */
+  @keyframes loading-animation {
+    0% {
+      background-size: 300px 0px;
+    }
+    100% {
+      background-size: 300px 159px;
+    }
+  }
+  .wave{
+    /* 파도 이미지*/
+    background-image: url("/team/images/wave.png");
+    -moz-background-clip:text;
+    -o-background-clip:text;
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    /* 텍스트를 투명하게 만들어 배경만 보이게 함 */
+    color: transparent;
+    text-shadow:0px 0px rgba(255, 255, 255, 0);
+
+    /* 두 개의 애니메이션 동시 실행:
+       1. wave-animation: 1초 동안 무한 반복 (파도 움직임)
+       2. loading-animation: 10초 동안 1회 실행 후 마지막 상태 유지 (파도 차오름) */
+    animation: wave-animation 1s infinite linear, loading-animation 10s 1 linear forwards;
+    /* 파도 이미지 크기와 반복 설정 */
+    background-size: 300px 147px;
+    background-repeat: repeat-x;
+    background-position: 0 bottom;
+    /* 투명도 설정 */
+    opacity: 1;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-20px);
+    }
+}
+
+
+@-webkit-keyframes mouse-scroll {
+    0% {
+      top: 10%;
+      opacity: 1;
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      top: 30%;
+      opacity: 0;
+    }
+  }
+  @-moz-keyframes mouse-scroll {
+    0% {
+      top: 10%;
+      opacity: 1;
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      top: 30%;
+      opacity: 0;
+    }
+  }
+  @-o-keyframes mouse-scroll {
+    0% {
+      top: 10%;
+      opacity: 1;
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      top: 30%;
+      opacity: 0;
+    }
+  }
+  @keyframes mouse-scroll {
+    0% {
+      top: 10%;
+      opacity: 1;
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      top: 30%;
+      opacity: 0;
+    }
+  }
