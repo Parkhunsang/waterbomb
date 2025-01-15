@@ -255,166 +255,106 @@ section#whatis{
     width:100%;
     height:956px;
     background:black;
-    position:relative;
-    display:flex;
-    flex-direction:column;
-    overflow:hidden;
 }
 /* 흐르는글자영역 */
 .flowtxt{
-    position:absolute;
-    top:0px;
-    width:100%;
-    height:80px;
-    background:url('/team/images/flowtxt.svg') repeat;
+    width:70px;
+    height:100%;
+    background:url('/team/images/test_line_01.svg')repeat center;
     animation:flow-animation 10s linear forwards infinite;
     animation-direction:reverse;
+    z-index:1;
     }
 /* 백그라운드 교차 띠*/
-.splashline_wrap{
-    position:absolute;
-    top:239px;
-    width:100%;
-    height:636px;
-    background:none;
-    display:flex;
-    justify-content:center;
-}
-.splashline1{
-    position:absolute;
-    top:258px;
-    width:4000px;
-    height:108px;
-    background:url('/team/images/splash_line.svg')repeat-x;
-    transform:rotate(15deg);
-    animation:splash-animation 50s linear infinite reverse;
-}
-.splashline2{
-    position:absolute;
-    top:258px;
-    width:4000px;
-    height:108px;
-    background:url('/team/images/splash_line.svg')repeat-x;
-    background-size:cover;
-    transform:rotate(-15deg);
-    animation:splash-animation 50s linear infinite reverse;
-}
+
 /* 시너지영역 */
 .synergybox_wrap{
-    position:absolute;
-    margin-left:50%;
-    left:-960px;
-    top:0px;
+    width:100%;
     height:100%;
-    width:100%;
-    max-width:1920px;
-    height:636px;
-    top:239px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:30px;
+    display: flex;
+    flex-direction: row;
 }
-.synergybox{
-    position:relative;
-    background:none;
-    width:501px;
-    height:560px;
+ul#img_wrap{
+    width:100%;
+    height:100%;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+}
+ul#img_wrap li{
+    width: 100%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-left:20px;
+    padding-right:20px;
+    padding-bottom:20px;
+    box-sizing: border-box;
+    gap:12px;
+    position: relative;
+    left: 0px;
+    top: 0px;
+}
+ul#img_wrap li:nth-child(1){
+    background: url('/team/images/test_background_img_02.png')no-repeat center;
+    background-size:cover;
+}
+ul#img_wrap li:nth-child(2){
+    background: url('/team/images/test_background_img_03.png')no-repeat center;
+    background-size:cover;
+}
+ul#img_wrap li:nth-child(3){
+    background: url('/team/images/test_background_img_04.png')no-repeat center;
+    background-size:cover;
+}
+div.img_overlay_bg{
+    width: 100%;
+    height: 100%;
     background:black;
-    display:flex;
-    flex-direction:column;
-    box-sizing:border-box;
-    padding-bottom:39px;
+    opacity:0.5;
+    transition: 0.5s ease-out;
+    z-index: 2;
+    position: absolute;
+    left: 0px;
+    top: 0px;
 }
-.synergybox>img{
-    width:100%;
-    height:300px;
-    object-fit:cover;
-    margin-bottom:20px;
-}
-p.synergybox_title{
-    font:700 28px 'Pretendard';
-    color:#fff;
-    margin:0px 0px 8px 30px;
-    z-index: 10;
-}
-.marker,
-.marker2{
-    width:0px;
-    height:14px;
-    background:#00C74B;
-    position:absolute;
-    left:24px;
-    bottom:203px;
-    transition:all 0.5s ease-in-out;
+div.img_overlay_bg.selected{
     opacity:0;
 }
-.marker.active{
-    width:117px;
-    opacity:1;
+span.synergybox_title{
+    font:bold 56px 'pretendard';
+    color: white;
+    position: relative;
+    z-index: 1;
 }
-
-.marker.inactive, .marker2.inactive {
-    width: 0;
-    opacity: 0;
-    transition: all 0.5s ease-in-out; /* 줄어들 때도 같은 시간 적용 */
+span.synergybox_title::after{
+    content: ''; 
+    width:0;  
+    height:30px;
+    display: block;
+    position: absolute;
+    bottom:4px;
+    left: 0px;
+    background: #00C74B;
+    z-index:-1;
+    transition: width 0.3s ease-out;
 }
-
-.marker2.active {
-    width: 180px;
-    opacity: 1;
+span.synergybox_title.selected::after{
+    width:50%;
 }
-p.synergybox_title_ko{
-    font:600 20px 'Pretendard';
-    color:#fff;
-    margin:0px 0px 8px 30px;
+p.synergybox_sub{
+    font: 500 20px 'pretendard';
+    color:white;
 }
-.synergybox_subtxt{
-    font:600 14px 'Pretendard';
-    line-height:21px;
-    color:#fff;
-    margin:0px 0px 8px 30px;
+p.synergybox_kr_text{
+    font: 400 14px/20px 'pretendard';
+    color: white;
 }
-.synergybox_subtxt{
-    font:600 14px 'Pretendard';
-    line-height:21px;
-    color:#fff;
-    margin:0px 0px 8px 30px;
+p.synergybox_en_text{
+    font: 400 14px/20px 'pretendard';
+    color:white;
 }
-.synergybox_subtxt_en{
-    font:600 14px 'Pretendard';
-    line-height:21px;
-    color:#fff;
-    margin-left:30px;
-}
-/* 각 상자 보더색상과 기울기 */
-#act1{
-    border:2px solid #00C74B;
-    transform:rotate(15deg);
-}
-#act2{
-    border:2px solid #00C74B;
-    z-index:50;
-    transform:rotate(-15deg);
-}
-#act3{
-    border:2px solid #00C74B;
-    transform:rotate(15deg);
-    z-index:51;
-}
-.footer_txt_wrap{
-    width:auto;
-    height:auto;
-    display:flex;
-    flex-direction:column;
-}
-p.footer_txt{
-    font:500 14px 'Pretendard';
-    line-height:21px;
-    text-align:center;
-    color:#fff;
-}
-
 /* 남은기간 타이머 */
 section#dday {
     width: 100%;
@@ -1059,7 +999,7 @@ a.reservation_btn_wrap{
 section#lineup_wrap{
     position:relative;
     width:100%;
-    height:1692px;
+    height:2200px;
     background:black;
     display:flex;
     justify-content:center;
@@ -1070,7 +1010,7 @@ section#lineup_wrap{
     position:relative;
     width:100%;
     max-width:1920px;
-    height:1692px;
+    height:2200px;
     background:url('/team/images/lineup_bg.png')no-repeat center;
     background-size:cover;
     display:flex;
@@ -1674,10 +1614,10 @@ ul.shareicons_list{
 /* 흐르는글자 애니 */
 @keyframes flow-animation{
     0%{
-        background-position-x:0px;
+        background-position-y:0px;
     }
     100%{
-        background-position-x:637px;
+        background-position-y:637px;
     }
 }
 /* 교차하는띠 애니 */

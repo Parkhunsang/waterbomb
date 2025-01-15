@@ -1,11 +1,11 @@
 window.addEventListener('load',()=>{
-    loadingProgress()
-    introEffect()
-    whatIsEffect()
+    // loadingProgress()
+    // introEffect()
+    //whatIsEffect()
 
     timer()
     circleProgress()
-
+    synergyBox()
     ticketFlipEffect()
     ticketDragEffect()
 
@@ -135,32 +135,98 @@ function introEffect(){
 }
 
 // 시너지영역효과
-function whatIsEffect(){
-    const whatIsSection=document.querySelector('#whatis')
-    const synergyBoxes=document.querySelectorAll('.synergybox')
+// function whatIsEffect(){
+//     const whatIsSection=document.querySelector('#whatis')
+//     const synergyBoxes=document.querySelectorAll('.synergybox')
 
-    synergyBoxes.forEach(box=>{
-        const defaultRotation=box.id === 'act2' ? -15 : 15;
-        const marker=box.querySelector('.marker, .marker2');
+//     synergyBoxes.forEach(box=>{
+//         const defaultRotation=box.id === 'act2' ? -15 : 15;
+//         const marker=box.querySelector('.marker, .marker2');
 
-        box.addEventListener('mouseenter',()=>{
-            gsap.to(box, {rotation:0, duration:0.5, ease:'power2.out'});
+//         box.addEventListener('mouseenter',()=>{
+//             gsap.to(box, {rotation:0, duration:0.5, ease:'power2.out'});
 
-            if(marker){
-                marker.classList.remove('inactive');
-                marker.classList.add('active');
-            }
-        });
+//             if(marker){
+//                 marker.classList.remove('inactive');
+//                 marker.classList.add('active');
+//             }
+//         });
 
-        box.addEventListener('mouseleave',()=>{
-            gsap.to(box, {rotation:defaultRotation, duration:0.5, ease:'power2.out'});
+//         box.addEventListener('mouseleave',()=>{
+//             gsap.to(box, {rotation:defaultRotation, duration:0.5, ease:'power2.out'});
 
-            if(marker){
-                marker.classList.remove('active');
-                marker.classList.add('inactive');
-            }
-        });
-    });
+//             if(marker){
+//                 marker.classList.remove('active');
+//                 marker.classList.add('inactive');
+//             }
+//         });
+//     });
+// }
+
+//시너지 효과 2
+function synergyBox(){
+    const synergyLi=document.querySelectorAll('#img_wrap>li')
+    const overLayBg=document.querySelectorAll('.img_overlay_bg')
+    const normalTitle=document.querySelector('.synergybox_title')
+    const synergyWrap=document.querySelector('.synergybox_wrap')
+
+    let selectedItem=null;
+
+    synergyLi.forEach((item, index)=>{
+        item.addEventListener('mouseenter', ()=>{
+            showOverlay(index)
+        })
+    })
+
+    synergyWrap.addEventListener('mouseleave', ()=>{
+        hideOverlay()
+    })
+    
+    function showOverlay(index){
+        if(selectedItem!=null && selectedItem!=synergyLi[index]){
+            selectedItem.firstElementChild.classList.remove('selected')
+            selectedItem.firstElementChild.nextElementSibling.classList.remove('selected')
+        }
+        if(selectedItem!=synergyLi[index]){
+            selectedItem=synergyLi[index]
+            selectedItem.firstElementChild.classList.add('selected')
+            selectedItem.firstElementChild.nextElementSibling.classList.add('selected')
+        }
+    }
+
+    function hideOverlay(){
+        if(selectedItem!=null){
+            selectedItem.firstElementChild.classList.remove('selected')
+            selectedItem.firstElementChild.nextElementSibling.classList.remove('selected')
+        }
+    }
+
+
+    // for(const item of synergyOverlay){
+    //     item.addEventListener('mouseenter', showBg)
+    //     item.addEventListener('mouseleave', hideBg)
+    // }
+    
+    // function showBg(){
+
+    //     // const targetBg=this.querySelector('.img_overlay_bg')
+    //     const targetBg=this.firstElementChild;
+    //     const title=this.querySelector('.synergybox_title')
+    //     gsap.to(targetBg, {opacity:0, duration:0.3, ease:'power1.out'})
+    //     title.classList.add('selected')
+
+    // }
+
+    // function hideBg(){
+    //     // const targetBg=this.querySelector('.img_overlay_bg')
+    //     const targetBg=this.firstElementChild;
+    //     const title=this.querySelector('.synergybox_title')
+    //     gsap.to(targetBg, {opacity:0.5, duration:0.3, ease:'power1.out'})
+    //     title.classList.remove('selected')
+    // }
+
+    
+
 }
 
 // 타이머 효과
@@ -375,8 +441,8 @@ function lineUpScrollEffect(){
     const t2 = gsap.timeline({
         scrollTrigger: {
             trigger: lineupSection,
-            start: '50% 20%',
-            end: '+=3000',
+            start: '36% 20%',
+            end: '+=2200',
             pin: true,
             pinSpacing: true,
             scrub: 1,
